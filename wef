@@ -1,0 +1,2260 @@
+local keySystemGui = Instance.new("ScreenGui");
+keySystemGui.Name = "nano?";
+keySystemGui.Parent = game.CoreGui;
+local keyFrame = Instance.new("Frame");
+keyFrame.Size = UDim2.new(0, 300, 0, 200);
+keyFrame.Position = UDim2.new(0.5, -150, 0.5, -100);
+keyFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+keyFrame.Parent = keySystemGui;
+local instructionLabel = Instance.new("TextLabel");
+instructionLabel.Size = UDim2.new(0, 280, 0, 50);
+instructionLabel.Position = UDim2.new(0, 10, 0, 10);
+instructionLabel.BackgroundColor3 = Color3.fromRGB(60, 60, 60);
+instructionLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
+instructionLabel.Text = "fatal key:";
+instructionLabel.TextSize = 14;
+instructionLabel.TextWrapped = true;
+instructionLabel.Parent = keyFrame;
+local keyBox = Instance.new("TextBox");
+keyBox.Size = UDim2.new(0, 280, 0, 50);
+keyBox.Position = UDim2.new(0, 10, 0, 70);
+keyBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30);
+keyBox.TextColor3 = Color3.fromRGB(255, 255, 255);
+keyBox.Text = "enter the shit here";
+keyBox.ClearTextOnFocus = false;
+keyBox.Parent = keyFrame;
+local submitButton = Instance.new("TextButton");
+submitButton.Size = UDim2.new(0, 280, 0, 50);
+submitButton.Position = UDim2.new(0, 10, 0, 130);
+submitButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80);
+submitButton.TextColor3 = Color3.fromRGB(255, 255, 255);
+submitButton.Text = "execute";
+submitButton.Parent = keyFrame;
+local copyLinkButton = Instance.new("TextButton");
+copyLinkButton.Size = UDim2.new(0, 280, 0, 50);
+copyLinkButton.Position = UDim2.new(0, 10, 0, 190);
+copyLinkButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80);
+copyLinkButton.TextColor3 = Color3.fromRGB(255, 255, 255);
+copyLinkButton.Text = "copy discord link";
+copyLinkButton.Parent = keyFrame;
+local copyLink = "https://discord.gg/JfGFhZt7DK";
+submitButton.MouseButton1Click:Connect(function()
+	local key = keyBox.Text;
+	local validKeys = {"1A2B3C4D5E6F7G8H","V4BGJ7G47M9G31B9","ADMIN9183"};
+	for _, validKey in ipairs(validKeys) do
+		if (key == validKey) then
+			keySystemGui.Enabled = false;
+			local HWIDTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Apollo153/wl/main/idk"))();
+			local HWID = game:GetService("RbxAnalyticsService"):GetClientId();
+			for i, v in pairs(HWIDTable) do
+				if (v == HWID) then
+					local playersiur = game.Players.LocalPlayer;
+					if ((game.PlaceId == 7336302630) or (game.PlaceId == 7353845952)) then
+						local AZZAZAZAZAZ = game.Players.LocalPlayer;
+						function makeWatermark()
+							local watermark = Instance.new("ScreenGui");
+							local frame = Instance.new("Frame");
+							local info = Instance.new("TextLabel");
+							local line = Instance.new("Frame");
+							local UIGradient = Instance.new("UIGradient");
+							local UIGradient2 = Instance.new("UIGradient");
+							local ts = game:GetService("TweenService");
+							local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out);
+							local offset = {Offset=Vector2.new(1, 0)};
+							local create = ts:Create(UIGradient2, ti, offset);
+							local startingPos = Vector2.new(-1, 0);
+							local list = {};
+							local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new;
+							local counter = 0;
+							local status = "down";
+							UIGradient2.Offset = startingPos;
+							task.spawn(function()
+								local function rainbowColors()
+									local sat, val = 255, 255;
+									for i = 1, 15 do
+										local hue = i * 17;
+										table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255));
+									end
+								end
+								rainbowColors();
+								UIGradient2.Color = s({kpt(0, list[#list]),kpt(0.5, list[#list - 1]),kpt(1, list[#list - 2])});
+								counter = #list;
+								local function animate()
+									create:Play();
+									create.Completed:Wait();
+									UIGradient2.Offset = startingPos;
+									UIGradient2.Rotation = 180;
+									if ((counter == (#list - 1)) and (status == "down")) then
+										UIGradient2.Color = s({kpt(0, UIGradient2.Color.Keypoints[1].Value),kpt(0.5, list[#list]),kpt(1, list[1])});
+										counter = 1;
+										status = "up";
+									elseif ((counter == #list) and (status == "down")) then
+										UIGradient2.Color = s({kpt(0, UIGradient2.Color.Keypoints[1].Value),kpt(0.5, list[1]),kpt(1, list[2])});
+										counter = 2;
+										status = "up";
+									elseif ((counter <= (#list - 2)) and (status == "down")) then
+										UIGradient2.Color = s({kpt(0, UIGradient2.Color.Keypoints[1].Value),kpt(0.5, list[counter + 1]),kpt(1, list[counter + 2])});
+										counter = counter + 2;
+										status = "up";
+									end
+									create:Play();
+									create.Completed:Wait();
+									UIGradient2.Offset = startingPos;
+									UIGradient2.Rotation = 0;
+									if ((counter == (#list - 1)) and (status == "up")) then
+										UIGradient2.Color = s({kpt(0, list[1]),kpt(0.5, list[#list]),kpt(1, UIGradient2.Color.Keypoints[3].Value)});
+										counter = 1;
+										status = "down";
+									elseif ((counter == #list) and (status == "up")) then
+										UIGradient2.Color = s({kpt(0, list[2]),kpt(0.5, list[1]),kpt(1, UIGradient2.Color.Keypoints[3].Value)});
+										counter = 2;
+										status = "down";
+									elseif ((counter <= (#list - 2)) and (status == "up")) then
+										UIGradient2.Color = s({kpt(0, list[counter + 2]),kpt(0.5, list[counter + 1]),kpt(1, UIGradient2.Color.Keypoints[3].Value)});
+										counter = counter + 2;
+										status = "down";
+									end
+									animate();
+								end
+								animate();
+							end);
+							watermark.Name = "watermark";
+							watermark.ResetOnSpawn = false;
+							watermark.DisplayOrder = 101;
+							watermark.IgnoreGuiInset = true;
+							watermark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");
+							watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+							frame.Name = "frame";
+							frame.Parent = watermark;
+							frame.Active = true;
+							frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+							frame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							frame.BorderSizePixel = 0;
+							frame.Position = UDim2.new(0.0109431995, 0, 0.0421668217, 0);
+							frame.Size = UDim2.new(0, 500, 0, 26);
+							info.Name = "info";
+							info.Parent = frame;
+							info.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							info.BackgroundTransparency = 1;
+							info.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							info.BorderSizePixel = 0;
+							info.Size = UDim2.new(0, 500, 0, 23);
+							info.Font = Enum.Font.Code;
+							info.Text = "fatal.cc | priv | v1.0.1b | project delta | " .. AZZAZAZAZAZ.Name .. " | " .. os.date("%X");
+							info.TextScaled = true;
+							info.TextColor3 = Color3.fromRGB(255, 255, 255);
+							info.TextSize = 14;
+							info.TextStrokeTransparency = 0.92;
+							info.TextWrapped = true;
+							line.Name = "line";
+							line.Parent = frame;
+							line.BackgroundColor3 = Color3.fromRGB(122, 0, 255);
+							line.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							line.BorderSizePixel = 0;
+							line.Position = UDim2.new(7.785096e-8, 0, 0.992999136, 0);
+							line.Size = UDim2.new(0, 500, 0, -2);
+							UIGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(157, 0, 188)),ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 230))});
+							UIGradient.Parent = line;
+							UIGradient2.Parent = info;
+							task.spawn(function()
+								while wait() do
+									info.Text = "fatal.cc | priv | v1.0.1b | project delta | " .. AZZAZAZAZAZ.Name .. " | " .. os.date("%X");
+								end
+							end);
+						end
+						local TextLabelCenter = Instance.new("TextLabel");
+						function makeCenterWatermark()
+							local watermarkcenter = Instance.new("ScreenGui");
+							local center = Instance.new("Frame");
+							watermarkcenter.Name = "watermarkcenter";
+							watermarkcenter.IgnoreGuiInset = true;
+							watermarkcenter.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");
+							watermarkcenter.DisplayOrder = 99;
+							watermarkcenter.ResetOnSpawn = false;
+							watermarkcenter.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+							center.Name = "center";
+							center.Parent = watermarkcenter;
+							center.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							center.BackgroundTransparency = 1;
+							center.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							center.BorderSizePixel = 0;
+							center.Position = UDim2.new(0.455630541, 0, 0.51221627, 0);
+							center.Size = UDim2.new(0, 170, 0, 32);
+							TextLabelCenter.Parent = center;
+							TextLabelCenter.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							TextLabelCenter.BackgroundTransparency = 1;
+							TextLabelCenter.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							TextLabelCenter.BorderSizePixel = 0;
+							TextLabelCenter.Size = UDim2.new(0, 168, 0, 31);
+							TextLabelCenter.Font = Enum.Font.Code;
+							TextLabelCenter.Text = "fatal.cc";
+							TextLabelCenter.TextColor3 = Color3.fromRGB(122, 0, 255);
+							TextLabelCenter.TextSize = 13;
+							TextLabelCenter.TextStrokeTransparency = 0.7;
+						end
+						task.spawn(function()
+							while task.wait(1 / 50) do
+								TextLabelCenter.TextColor3 = Color3.fromHSV((tick() % 20) / 20, 1, 1);
+							end
+						end);
+						local notify = Instance.new("ScreenGui");
+						local backgroundNotify = Instance.new("Frame");
+						notify.Name = "notify";
+						notify.DisplayOrder = 100;
+						notify.ResetOnSpawn = false;
+						notify.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");
+						notify.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+						backgroundNotify.Name = "background";
+						backgroundNotify.Parent = notify;
+						backgroundNotify.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						backgroundNotify.BackgroundTransparency = 1;
+						backgroundNotify.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						backgroundNotify.BorderSizePixel = 0;
+						backgroundNotify.Position = UDim2.new(0.274622202, 0, 0.5796296, 0);
+						backgroundNotify.Size = UDim2.new(0, 869, 0, 454);
+						local notifyYPosition = 0;
+						local notifynextYPosition = notifyYPosition;
+						function createNotify(text)
+							local notif = Instance.new("TextLabel");
+							notif.Name = "notif";
+							notif.Parent = backgroundNotify;
+							notif.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							notif.BackgroundTransparency = 1;
+							notif.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							notif.BorderSizePixel = 0;
+							notif.Size = UDim2.new(0, 886, 0, 50);
+							notif.Position = UDim2.new(0, 0, notifynextYPosition, 0);
+							notif.Font = Enum.Font.Code;
+							notif.Text = "[fatal.cc] -> " .. text;
+							notif.TextColor3 = Color3.fromRGB(122, 0, 255);
+							notif.TextSize = 15;
+							notif.TextStrokeTransparency = 0.78;
+							notifynextYPosition = notifynextYPosition + 0.03;
+							spawn(function()
+								wait(3);
+								notif:Destroy();
+								wait(1);
+								local activeNotifications = 0;
+								for _, child in pairs(backgroundNotify:GetChildren()) do
+									if (child:IsA("TextLabel") and (child.Name == "notif")) then
+										activeNotifications = activeNotifications + 1;
+									end
+								end
+								if (activeNotifications == 0) then
+									notifynextYPosition = 0;
+								else
+									local newYPosition = 0;
+									for _, child in pairs(backgroundNotify:GetChildren()) do
+										if (child:IsA("TextLabel") and (child.Name == "notif")) then
+											child.Position = UDim2.new(0, 0, newYPosition, 0);
+											newYPosition = newYPosition + 0.03;
+										end
+									end
+								end
+							end);
+						end
+						local inventoryenabled = false;
+						local clothingenabled = false;
+						local ScreenGui = Instance.new("ScreenGui");
+						local inventory = Instance.new("Frame");
+						local playertxt = Instance.new("TextLabel");
+						local info = Instance.new("TextLabel");
+						local clothing = Instance.new("Frame");
+						local info_2 = Instance.new("TextLabel");
+						local player_2 = Instance.new("TextLabel");
+						ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");
+						ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+						ScreenGui.ResetOnSpawn = false;
+						inventory.Name = "inventory";
+						inventory.Visible = false;
+						inventory.Parent = ScreenGui;
+						inventory.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						inventory.BackgroundTransparency = 1;
+						inventory.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						inventory.BorderSizePixel = 0;
+						inventory.Position = UDim2.new(0.823933899, 0, 0, 0);
+						inventory.Size = UDim2.new(0, 337, 0, 534);
+						playertxt.Name = "player";
+						playertxt.Parent = inventory;
+						playertxt.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						playertxt.BackgroundTransparency = 1;
+						playertxt.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						playertxt.BorderSizePixel = 0;
+						playertxt.Size = UDim2.new(0, 337, 0, 34);
+						playertxt.Font = Enum.Font.Code;
+						playertxt.Text = "player ->";
+						playertxt.TextColor3 = Color3.fromRGB(122, 0, 255);
+						playertxt.TextSize = 13;
+						playertxt.TextStrokeTransparency = 0.78;
+						info.Name = "info";
+						info.Parent = inventory;
+						info.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						info.BackgroundTransparency = 1;
+						info.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						info.BorderSizePixel = 0;
+						info.Position = UDim2.new(0, 0, 0.0393258445, 0);
+						info.Size = UDim2.new(0, 337, 0, 34);
+						info.Font = Enum.Font.Code;
+						info.Text = "player -> inventory";
+						info.TextColor3 = Color3.fromRGB(122, 0, 255);
+						info.TextSize = 13;
+						info.TextStrokeTransparency = 0.78;
+						local initialYPosition = 0.0852022469;
+						local nextYPosition = initialYPosition;
+						local itemTextObjects = {};
+						function createItemText(text)
+							local item = Instance.new("TextLabel");
+							item.Text = text;
+							item.Parent = inventory;
+							item.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							item.BackgroundTransparency = 1;
+							item.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							item.BorderSizePixel = 0;
+							item.Position = UDim2.new(0.179596946, 0, nextYPosition, 0);
+							item.Size = UDim2.new(0, 276, 0, 34);
+							item.Font = Enum.Font.Code;
+							item.TextColor3 = Color3.fromRGB(122, 0, 255);
+							item.TextSize = 11;
+							item.TextStrokeTransparency = 0.78;
+							item.TextXAlignment = Enum.TextXAlignment.Left;
+							nextYPosition = nextYPosition + 0.02;
+							table.insert(itemTextObjects, item);
+							return item;
+						end
+						function removeItemText()
+							for _, itemText in pairs(itemTextObjects) do
+								itemText:Destroy();
+							end
+							itemTextObjects = {};
+							nextYPosition = initialYPosition;
+						end
+						clothing.Name = "clothing";
+						clothing.Visible = false;
+						clothing.Parent = ScreenGui;
+						clothing.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						clothing.BackgroundTransparency = 1;
+						clothing.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						clothing.BorderSizePixel = 0;
+						clothing.Position = UDim2.new(0.823933899, 0, 0.502957046, 0);
+						clothing.Size = UDim2.new(0, 337, 0, 534);
+						info_2.Name = "info";
+						info_2.Parent = clothing;
+						info_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						info_2.BackgroundTransparency = 1;
+						info_2.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						info_2.BorderSizePixel = 0;
+						info_2.Position = UDim2.new(0, 0, 0.0449438207, 0);
+						info_2.Size = UDim2.new(0, 337, 0, 34);
+						info_2.Font = Enum.Font.Code;
+						info_2.Text = "player -> clothing";
+						info_2.TextColor3 = Color3.fromRGB(122, 0, 255);
+						info_2.TextSize = 13;
+						info_2.TextStrokeTransparency = 0.78;
+						local initialYPosition2 = 0.0915467888;
+						local nextYPosition2 = initialYPosition2;
+						local itemTextObjects2 = {};
+						function createItemTextClothing(text)
+							local item_2 = Instance.new("TextLabel");
+							item_2.Parent = clothing;
+							item_2.Text = text;
+							item_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+							item_2.BackgroundTransparency = 1;
+							item_2.BorderColor3 = Color3.fromRGB(0, 0, 0);
+							item_2.BorderSizePixel = 0;
+							item_2.Position = UDim2.new(0.179596946, 0, nextYPosition2, 0);
+							item_2.Size = UDim2.new(0, 273, 0, 34);
+							item_2.Font = Enum.Font.Code;
+							item_2.TextColor3 = Color3.fromRGB(122, 0, 255);
+							item_2.TextSize = 11;
+							item_2.TextStrokeTransparency = 0.78;
+							item_2.TextXAlignment = Enum.TextXAlignment.Left;
+							nextYPosition2 = nextYPosition2 + 0.03;
+							table.insert(itemTextObjects2, item_2);
+							return item_2;
+						end
+						function removeClothingText()
+							for _, itemText in pairs(itemTextObjects2) do
+								itemText:Destroy();
+							end
+							itemTextObjects2 = {};
+							nextYPosition2 = initialYPosition2;
+						end
+						player_2.Name = "player";
+						player_2.Parent = clothing;
+						player_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						player_2.BackgroundTransparency = 1;
+						player_2.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						player_2.BorderSizePixel = 0;
+						player_2.Position = UDim2.new(-0.00593471806, 0, 0.0018726592, 0);
+						player_2.Size = UDim2.new(0, 337, 0, 34);
+						player_2.Font = Enum.Font.Code;
+						player_2.Text = "player ->";
+						player_2.TextColor3 = Color3.fromRGB(122, 0, 255);
+						player_2.TextSize = 13;
+						player_2.TextStrokeTransparency = 0.78;
+						local targetinfo = Instance.new("ScreenGui");
+						local centerScreenTarget = Instance.new("Frame");
+						local targetname = Instance.new("TextLabel");
+						local targetvisibilty = Instance.new("TextLabel");
+						local targethealth = Instance.new("TextLabel");
+						targetinfo.Name = "targetinfo";
+						targetinfo.ResetOnSpawn = false;
+						targetinfo.IgnoreGuiInset = true;
+						targetinfo.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui");
+						targetinfo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+						centerScreenTarget.Name = "centerScreenTarget";
+						centerScreenTarget.Parent = targetinfo;
+						centerScreenTarget.Visible = false;
+						centerScreenTarget.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						centerScreenTarget.BackgroundTransparency = 1;
+						centerScreenTarget.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						centerScreenTarget.BorderSizePixel = 0;
+						centerScreenTarget.Position = UDim2.new(0.432601154, 0, 0.540920019, 0);
+						centerScreenTarget.Size = UDim2.new(0, 262, 0, 56);
+						targetname.Name = "targetname";
+						targetname.Parent = centerScreenTarget;
+						targetname.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						targetname.BackgroundTransparency = 1;
+						targetname.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						targetname.BorderSizePixel = 0;
+						targetname.Position = UDim2.new(0.0117639443, 0, -0.000002179827, 0);
+						targetname.Size = UDim2.new(0, 258, 0, 17);
+						targetname.Font = Enum.Font.Code;
+						targetname.Text = "target: unknown";
+						targetname.TextColor3 = Color3.fromRGB(122, 0, 255);
+						targetname.TextSize = 14;
+						targetname.TextStrokeTransparency = 0.7;
+						targetvisibilty.Name = "targetvisibilty";
+						targetvisibilty.Parent = centerScreenTarget;
+						targetvisibilty.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						targetvisibilty.BackgroundTransparency = 1;
+						targetvisibilty.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						targetvisibilty.BorderSizePixel = 0;
+						targetvisibilty.Position = UDim2.new(0.0117639443, 0, 0.30357033, 0);
+						targetvisibilty.Size = UDim2.new(0, 258, 0, 17);
+						targetvisibilty.Font = Enum.Font.Code;
+						targetvisibilty.Text = "visible: unknown";
+						targetvisibilty.TextColor3 = Color3.fromRGB(122, 0, 255);
+						targetvisibilty.TextSize = 14;
+						targetvisibilty.TextStrokeTransparency = 0.7;
+						targethealth.Name = "health";
+						targethealth.Parent = centerScreenTarget;
+						targethealth.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+						targethealth.BackgroundTransparency = 1;
+						targethealth.BorderColor3 = Color3.fromRGB(0, 0, 0);
+						targethealth.BorderSizePixel = 0;
+						targethealth.Position = UDim2.new(0.0117639443, 0, 0.607141793, 0);
+						targethealth.Size = UDim2.new(0, 258, 0, 17);
+						targethealth.Font = Enum.Font.Code;
+						targethealth.Text = "health: hp/100hp";
+						targethealth.TextColor3 = Color3.fromRGB(122, 0, 255);
+						targethealth.TextSize = 14;
+						targethealth.TextStrokeTransparency = 0.7;
+						createNotify("loading");
+						print("fatal.cc | ✅ | logged as: user");
+						print("fatal.cc | ✅ | 1,2,3,4,5,6,7,8,4007");
+						repeat
+							task.wait();
+						until game:IsLoaded() 
+						wait(1);
+						createNotify("bypass loading");
+						function Bypass_Client()
+							for i, v in pairs(getgc(true)) do
+								if ((type(v) == "table") and (rawget(v, "A1Sent") ~= nil)) then
+									rawset(v, "A1Sent", true);
+								end
+							end
+						end
+						local success = pcall(function()
+							Bypass_Client();
+							print("fatal.cc | ✅ | byp step");
+							createNotify("bypass loaded");
+						end);
+						if not success then
+							print("fatal.cc | ❌ | failed to bypass");
+							playersiur:Kick("fatal.cc | FAILED TO LOAD BYPASS!");
+						end
+						wait(1);
+						if not LPH_OBFUSCATED then
+							function LPH_JIT_MAX(f)
+								return f;
+							end
+							function LPH_NO_VIRTUALIZE(f)
+								return f;
+							end
+						end
+						wait(1);
+						local nigga = isfolder("melonwarepd");
+						if nigga then
+							print("fatal.cc | ✅ | ld cfg folder");
+						else
+							makefolder("melonwarepd");
+							print("fatal.cc | ✅ | crt folder");
+						end
+						wait(1);
+						print("fatal.cc | ✅ | fnc step");
+						createNotify("functions loaded");
+						makeWatermark();
+						makeCenterWatermark();
+						wait(1);
+						print("fatal.cc | ✅ | loaded");
+						createNotify("loaded & bypassed");
+						local sound = Instance.new("Sound");
+						sound.SoundId = "rbxassetid://4764109000";
+						sound.Parent = workspace;
+						sound:Play();
+						local libary = loadstring(game:HttpGet("https://raw.githubusercontent.com/CocaColaManNig/NIGGAUI/main/ui.lua"))();
+						libary:setkey(Enum.KeyCode.RightShift);
+						local Window = libary:new({name="fatal | priv | project delta",accent=Color3.fromRGB(122, 0, 255),textsize=13});
+						local aim = Window:page({name="aim"});
+						local guns = Window:page({name="gun"});
+						local vis = Window:page({name="visuals"});
+						local wor = Window:page({name="world"});
+						local mis = Window:page({name="misc"});
+						local set = Window:page({name="settings"});
+						local repStorage = game['ReplicatedStorage'];
+						local rs = game:GetService("RunService");
+						local plrs = game:GetService("Players");
+						local plr = plrs.LocalPlayer;
+						local Running = false;
+						local uis = game:GetService("UserInputService");
+						local camxd = game:GetService("Workspace").CurrentCamera;
+						uis.InputBegan:Connect(function(Input)
+							pcall(function()
+								Running = true;
+							end);
+						end);
+						uis.InputEnded:Connect(function(Input)
+							pcall(function()
+								Running = false;
+							end);
+						end);
+						local BTracersSettings = {enabled=false,Texture="Stretch",Color=Color3.new(122, 0, 255)};
+						local gnsettings = {norecoil=false,noshotgunspread=false,nobulletdrop=false,instantreload=false,doubletap=false,targetinfo=false,rapidfire=false,rapidrate=0,quickaim=false,instanthit=false,fastbullet=false,bulletspeed=3000};
+						local playersettings = {walkspeed=false,walkspeedamount=16,hipheight=false,hipheightamount=2,jumpheightenabled=false,jumpheight=2,nodrowning=false};
+						local viewmodelsettings = {destoryarms=false,destoryviewmodel=false,customModel=false,customViewModelPos=false,viewX=0,viewY=0,viewZ=0};
+						local Old_Ammo = {["762x54AP"]={Drop=repStorage.AmmoTypes["762x54AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x54AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x54AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x54AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x54AP"]:GetAttribute("ArmorPen")},["9x18AP"]={Drop=repStorage.AmmoTypes["9x18AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x18AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x18AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x18AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x18AP"]:GetAttribute("ArmorPen")},["762x39AP"]={Drop=repStorage.AmmoTypes["762x39AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x39AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x39AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x39AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x39AP"]:GetAttribute("ArmorPen")},["9x18Z"]={Drop=repStorage.AmmoTypes["9x18Z"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x18Z"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x18Z"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x18Z"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x18Z"]:GetAttribute("ArmorPen")},["762x25Tracer"]={Drop=repStorage.AmmoTypes["762x25Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x25Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x25Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x25Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x25Tracer"]:GetAttribute("ArmorPen")},["556x45Tracer"]={Drop=repStorage.AmmoTypes["556x45Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["556x45Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["556x45Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["556x45Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["556x45Tracer"]:GetAttribute("ArmorPen")},["762x25AP"]={Drop=repStorage.AmmoTypes["762x25AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x25AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x25AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x25AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x25AP"]:GetAttribute("ArmorPen")},["762x39Tracer"]={Drop=repStorage.AmmoTypes["762x39Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x39Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x39Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x39Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x39Tracer"]:GetAttribute("ArmorPen")},["762x54Tracer"]={Drop=repStorage.AmmoTypes["762x54Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["762x54Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["762x54Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["762x54Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["762x54Tracer"]:GetAttribute("ArmorPen")},["9x19Tracer"]={Drop=repStorage.AmmoTypes["9x19Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x19Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x19Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x19Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x19Tracer"]:GetAttribute("ArmorPen")},["9x18Tracer"]={Drop=repStorage.AmmoTypes["9x18Tracer"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x18Tracer"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x18Tracer"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x18Tracer"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x18Tracer"]:GetAttribute("ArmorPen")},["9x19AP"]={Drop=repStorage.AmmoTypes["9x19AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x19AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x19AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x19AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x19AP"]:GetAttribute("ArmorPen")},["556x45AP"]={Drop=repStorage.AmmoTypes["556x45AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["556x45AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["556x45AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["556x45AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["556x45AP"]:GetAttribute("ArmorPen")},["9x39Z"]={Drop=repStorage.AmmoTypes["9x39Z"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x39Z"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x39Z"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x39Z"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x39Z"]:GetAttribute("ArmorPen")},["9x39AP"]={Drop=repStorage.AmmoTypes["9x39AP"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["9x39AP"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["9x39AP"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["9x39AP"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["9x39AP"]:GetAttribute("ArmorPen")},["12gaSlug"]={Drop=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("ArmorPen"),Spread=repStorage.AmmoTypes["12gaSlug"]:GetAttribute("AccuracyDeviation")},["12gaBuckshot"]={Drop=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("ArmorPen"),Spread=repStorage.AmmoTypes["12gaBuckshot"]:GetAttribute("AccuracyDeviation")},["12gaFlechette"]={Drop=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("ProjectileDrop"),Speed=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("MuzzleVelocity"),Damage=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("Damage"),Pellets=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("Pellets"),ArmorPen=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("ArmorPen"),Spread=repStorage.AmmoTypes["12gaFlechette"]:GetAttribute("AccuracyDeviation")}};
+						local Sky = game:GetService("Lighting"):FindFirstChildOfClass("Sky");
+						if not Sky then
+							Sky = Framework:Instance("Sky", {Parent=lighting});
+						end
+						local SkyBoxes = {Standard={SkyboxBk=Sky.SkyboxBk,SkyboxDn=Sky.SkyboxDn,SkyboxFt=Sky.SkyboxFt,SkyboxLf=Sky.SkyboxLf,SkyboxRt=Sky.SkyboxRt,SkyboxUp=Sky.SkyboxUp},["Night Sky"]={SkyboxBk="rbxassetid://12064107",SkyboxDn="rbxassetid://12064152",SkyboxFt="rbxassetid://12064121",SkyboxLf="rbxassetid://12063984",SkyboxRt="rbxassetid://12064115",SkyboxUp="rbxassetid://12064131"},Neptune={SkyboxBk="rbxassetid://218955819",SkyboxDn="rbxassetid://218953419",SkyboxFt="rbxassetid://218954524",SkyboxLf="rbxassetid://218958493",SkyboxRt="rbxassetid://218957134",SkyboxUp="rbxassetid://218950090"},["Aesthetic Night"]={SkyboxBk="rbxassetid://1045964490",SkyboxDn="rbxassetid://1045964368",SkyboxFt="rbxassetid://1045964655",SkyboxLf="rbxassetid://1045964655",SkyboxRt="rbxassetid://1045964655",SkyboxUp="rbxassetid://1045962969"},Redshift={SkyboxBk="rbxassetid://401664839",SkyboxDn="rbxassetid://401664862",SkyboxFt="rbxassetid://401664960",SkyboxLf="rbxassetid://401664881",SkyboxRt="rbxassetid://401664901",SkyboxUp="rbxassetid://401664936"},["Morning Glow"]={SkyboxBk="rbxassetid://1417494030",SkyboxDn="rbxassetid://1417494146",SkyboxFt="rbxassetid://1417494253",SkyboxLf="rbxassetid://1417494402",SkyboxRt="rbxassetid://1417494499",SkyboxUp="rbxassetid://1417494643"},["Fade Blue"]={SkyboxBk="rbxassetid://153695414",SkyboxDn="rbxassetid://153695352",SkyboxFt="rbxassetid://153695452",SkyboxLf="rbxassetid://153695320",SkyboxRt="rbxassetid://153695383",SkyboxUp="rbxassetid://153695471"}};
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Raw%20Main.lua"))();
+						getgenv().Aimbot.Settings.Enabled = false;
+						getgenv().Aimbot.FOVSettings.Enabled = false;
+						local aimbot = aim:section({name="aimbot",side="left",size=210});
+						aimbot:toggle({name="enabled",def=false,callback=function(bool)
+							getgenv().Aimbot.Settings.Enabled = bool;
+						end});
+						aimbot:toggle({name="teamcheck",def=false,callback=function(bool)
+							getgenv().Aimbot.Settings.TeamCheck = bool;
+						end});
+						aimbot:slider({name="sensitivity",def=0.1,max=1,min=0,rounding=false,callback=function(value)
+							getgenv().Aimbot.Settings.Sensitivity = value;
+						end});
+						aimbot:dropdown({name="hitbox",def="head",max=4,options={"head","neck","torso"},callback=function(option)
+							if (option == "head") then
+								getgenv().Aimbot.Settings.LockPart = "Head";
+							elseif (option == "neck") then
+								getgenv().Aimbot.Settings.LockPart = "UpperTorso";
+							elseif (option == "torso") then
+								getgenv().Aimbot.Settings.LockPart = "HumanoidRootPart";
+							end
+						end});
+						aimbot:toggle({name="showfov",def=false,callback=function(bool)
+							getgenv().Aimbot.FOVSettings.Enabled = bool;
+						end});
+						aimbot:colorpicker({name="fovcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							getgenv().Aimbot.FOVSettings.Color = color;
+						end});
+						aimbot:slider({name="fovsize",def=100,max=1000,min=1,rounding=false,callback=function(value)
+							getgenv().Aimbot.FOVSettings.Amount = value;
+						end});
+						local silentaimenabled = false;
+						local visiblechecksilent = false;
+						local maxdistancesilent = false;
+						local maxdistancesilentSize = 2000;
+						local hitchanceenabled = false;
+						local hitchance = 100;
+						local silenttargetpart = "Head";
+						local CHEAT_CLIENT = {};
+						do
+							do
+								CHEAT_CLIENT.player = game.Players.LocalPlayer;
+								CHEAT_CLIENT.camera = game.Workspace.CurrentCamera;
+								CHEAT_CLIENT.mouse = CHEAT_CLIENT.player:GetMouse();
+							end
+							do
+								CHEAT_CLIENT.get_target = function(self)
+									local current_target = nil;
+									local maximum_distance = math.huge;
+									for i, v in pairs(game.Players:GetPlayers()) do
+										if (v == game.Players.LocalPlayer) then
+											continue;
+										end
+										if (v.Character and v.Character:FindFirstChild("HumanoidRootPart")) then
+											local position, on_screen = CHEAT_CLIENT.camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position);
+											if not on_screen then
+												continue;
+											end
+											local distance = (Vector2.new(position.X, position.Y - game.GuiService:GetGuiInset(game.GuiService).Y) - Vector2.new(CHEAT_CLIENT.mouse.X, CHEAT_CLIENT.mouse.Y)).Magnitude;
+											if (distance > maximum_distance) then
+												continue;
+											end
+											current_target = v;
+											maximum_distance = distance;
+										end
+									end
+									return current_target;
+								end;
+								CHEAT_CLIENT.predict_velocity = function(self, target_part, projectile_speed)
+									local velocity = target_part.Velocity;
+									local distance = (CHEAT_CLIENT.camera.CFrame.p - target_part.CFrame.p).Magnitude;
+									local time_to_hit = distance / projectile_speed;
+									local predicted_position = target_part.CFrame.p + (velocity * time_to_hit);
+									local delta = (predicted_position - target_part.CFrame.p).Magnitude;
+									local final_projectile_speed = projectile_speed - (0.013 * (projectile_speed ^ 2) * (time_to_hit ^ 2));
+									time_to_hit += (delta / final_projectile_speed)
+									return target_part.CFrame.p + (velocity * time_to_hit);
+								end;
+								CHEAT_CLIENT.predict_drop = function(self, target_part, projectile_speed, projectile_drop)
+									local distance = (CHEAT_CLIENT.camera.CFrame.p - target_part.CFrame.p).Magnitude;
+									local time_to_hit = distance / projectile_speed;
+									local final_projectile_speed = projectile_speed - (0.013 * (projectile_speed ^ 2) * (time_to_hit ^ 2));
+									time_to_hit += (distance / final_projectile_speed)
+									local drop_timing = projectile_drop * (time_to_hit ^ 2);
+									if not tostring(drop_timing):find("nan") then
+										return drop_timing;
+									end
+									return 0;
+								end;
+								CHEAT_CLIENT.get_bullet_atribute = function(self, attribute)
+									local attribute_value = nil;
+									local status = game.ReplicatedStorage.Players[CHEAT_CLIENT.player.Name]:FindFirstChild("Status");
+									if status then
+										local equipped_tool = status.GameplayVariables.EquippedTool.Value;
+										if equipped_tool then
+											local inventory_equipped_tool = game.ReplicatedStorage.Players[CHEAT_CLIENT.player.Name].Inventory:FindFirstChild(tostring(equipped_tool));
+											if inventory_equipped_tool then
+												local mag = (inventory_equipped_tool.Attachments:FindFirstChild("Magazine") and inventory_equipped_tool.Attachments:FindFirstChild("Magazine"):FindFirstChildOfClass("StringValue") and inventory_equipped_tool.Attachments:FindFirstChild("Magazine"):FindFirstChildOfClass("StringValue"):FindFirstChild("ItemProperties").LoadedAmmo) or inventory_equipped_tool.ItemProperties:FindFirstChild("LoadedAmmo");
+												if mag then
+													local first_bullet_type = mag:FindFirstChild("1");
+													if first_bullet_type then
+														attribute_value = game.ReplicatedStorage.AmmoTypes[first_bullet_type:GetAttribute("AmmoType")]:GetAttribute(attribute);
+													end
+												end
+											end
+										end
+									end
+									return attribute_value;
+								end;
+							end
+						end
+						local circleRadius = 50;
+						local silentFOVRadius = 100;
+						local playersInCircleSilent = {};
+						local function isCharacterInCircles(character)
+							if character then
+								local humanoidRootPart = character:FindFirstChild("HumanoidRootPart");
+								local head = character:FindFirstChild("Head");
+								if (humanoidRootPart and head) then
+									local camera = game.Workspace.CurrentCamera;
+									local rootPartPosition = camera:WorldToViewportPoint(humanoidRootPart.Position);
+									local headPosition = camera:WorldToViewportPoint(head.Position);
+									if (rootPartPosition and headPosition) then
+										local distanceToRootPart = (Vector2.new(rootPartPosition.X, rootPartPosition.Y) - circleCenter).Magnitude;
+										local distanceToHead = (Vector2.new(headPosition.X, headPosition.Y) - circleCenter).Magnitude;
+										return (distanceToRootPart <= silentFOVRadius) or (distanceToHead <= silentFOVRadius);
+									end
+								end
+								return false;
+							end
+						end
+						local function shouldAdjustAim()
+							return hitchanceenabled and (math.random(1, 100) <= hitchance);
+						end
+						local tracerDebounce = false;
+						local function createTracer(from, to)
+							if BTracersSettings['enabled'] then
+								if not tracerDebounce then
+									tracerDebounce = true;
+									spawn(function()
+										wait();
+										tracerDebounce = false;
+									end);
+									to -= ((from.Position - to).unit * 100)
+									local part1 = Instance.new("Part");
+									local part2 = Instance.new("Part");
+									local bm = Instance.new("Beam", part1);
+									local bm2 = Instance.new("Beam", part1);
+									local attachment1 = Instance.new("Attachment");
+									local attachment2 = Instance.new("Attachment");
+									part1.Transparency = 1;
+									part1.Position = to;
+									part1.CanCollide = false;
+									part1.Anchored = true;
+									part1.Parent = workspace;
+									attachment1.Parent = part1;
+									part2.Transparency = 1;
+									part2.Position = from.Position;
+									part2.CanCollide = false;
+									part2.Anchored = true;
+									part2.Parent = workspace;
+									attachment2.Parent = part2;
+									bm.Texture = "rbxassetid://7216850022";
+									bm.FaceCamera = true;
+									bm.Color = ColorSequence.new(BTracersSettings['Color']);
+									bm.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1 - 0.5),NumberSequenceKeypoint.new(1, 1 - 0.5)});
+									bm.Width0 = 0.055;
+									bm.Width1 = 0.055;
+									bm.LightEmission = 1;
+									bm.LightInfluence = 0;
+									bm.Attachment0 = attachment1;
+									bm.Attachment1 = attachment2;
+									bm.Parent = part1;
+									bm.Texture = "rbxassetid://7216850022";
+									bm2.FaceCamera = true;
+									bm2.Color = ColorSequence.new(BTracersSettings['Color']);
+									bm2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1 - 0.75),NumberSequenceKeypoint.new(1, 1 - 0.75)});
+									bm2.Width0 = 0.025;
+									bm2.Width1 = 0.025;
+									bm2.LightEmission = 1;
+									bm2.LightInfluence = 0;
+									bm2.Attachment0 = attachment1;
+									bm2.Attachment1 = attachment2;
+									bm2.Parent = part1;
+									spawn(function()
+										wait(2);
+										for i = 0.5, 0, -0.025 do
+											wait();
+											bm.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1 - i),NumberSequenceKeypoint.new(1, 1 - i)});
+											bm2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.75 - i),NumberSequenceKeypoint.new(1, 0.75 - i)});
+										end
+										for i = 0.25, 0, -0.025 do
+											wait();
+											bm2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1 - i),NumberSequenceKeypoint.new(1, 1 - i)});
+										end
+										bm:Destroy();
+										bm2:Destroy();
+										part1:Destroy();
+										part2:Destroy();
+									end);
+								end
+							end
+						end
+						local jfu9i23ygt7824 = game.Players.LocalPlayer;
+						local function isPlayerVisible(player, targetPlayer)
+							local camera = game.Workspace.CurrentCamera;
+							local targetCharacter = targetPlayer.Character;
+							if not targetCharacter then
+								return false;
+							end
+							local ray = Ray.new(camera.CFrame.Position, (targetCharacter.Head.Position - camera.CFrame.Position).unit * 1000);
+							local part, position = workspace:FindPartOnRay(ray, player.Character, false, true);
+							if (part and not part:IsDescendantOf(targetCharacter)) then
+								return false;
+							end
+							return true;
+						end
+						local silent_aim_hook;
+						silent_aim_hook = hookfunction(require(game.ReplicatedStorage.Modules.FPS.Bullet).CreateBullet, LPH_NO_VIRTUALIZE(function(...)
+							local args = {...};
+							if (CHEAT_CLIENT:get_target() and silentaimenabled) then
+								local attribute_velocity = CHEAT_CLIENT:get_bullet_atribute("MuzzleVelocity");
+								local attribute_drop = CHEAT_CLIENT:get_bullet_atribute("ProjectileDrop");
+								local target_part = CHEAT_CLIENT:get_target().Character:FindFirstChild(silenttargetpart);
+								if (attribute_velocity and attribute_drop and target_part) then
+									if maxdistancesilent then
+										local distanceToTarget = (CHEAT_CLIENT.camera.CFrame.p - target_part.CFrame.p).Magnitude;
+										if (distanceToTarget <= maxdistancesilentSize) then
+											for _, player in pairs(game.Players:GetPlayers()) do
+												local character = player.Character;
+												local from = CHEAT_CLIENT.player.Character:FindFirstChild("Head");
+												if (character and isCharacterInCircles(character)) then
+													if hitchanceenabled then
+														if visiblechecksilent then
+															if isPlayerVisible(jfu9i23ygt7824, CHEAT_CLIENT:get_target()) then
+																if shouldAdjustAim() then
+																	createTracer(from, target_part.Position);
+																	args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+																end
+															end
+														elseif shouldAdjustAim() then
+															createTracer(from, target_part.Position);
+															args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+														end
+													elseif visiblechecksilent then
+														if isPlayerVisible(jfu9i23ygt7824, CHEAT_CLIENT:get_target()) then
+															createTracer(from, target_part.Position);
+															args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+														end
+													else
+														createTracer(from, target_part.Position);
+														args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+													end
+												end
+											end
+										end
+									else
+										for _, player in pairs(game.Players:GetPlayers()) do
+											local character = player.Character;
+											local from = CHEAT_CLIENT.player.Character:FindFirstChild("Head");
+											if (character and isCharacterInCircles(character)) then
+												if hitchanceenabled then
+													if visiblechecksilent then
+														if isPlayerVisible(jfu9i23ygt7824, CHEAT_CLIENT:get_target()) then
+															if shouldAdjustAim() then
+																createTracer(from, target_part.Position);
+																args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+															end
+														end
+													elseif shouldAdjustAim() then
+														createTracer(from, target_part.Position);
+														args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+													end
+												elseif visiblechecksilent then
+													if isPlayerVisible(player, CHEAT_CLIENT:get_target()) then
+														createTracer(from, target_part.Position);
+														args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+													end
+												else
+													createTracer(from, target_part.Position);
+													args[9] = {CFrame=CFrame.new(args[9].CFrame.p, CHEAT_CLIENT:predict_velocity(target_part, attribute_velocity) + Vector3.new(0, CHEAT_CLIENT:predict_drop(target_part, attribute_velocity, attribute_drop), 0))};
+												end
+											end
+										end
+									end
+								end
+							end
+							return silent_aim_hook(unpack(args));
+						end));
+						local function calculateCenters()
+							local camera = game.Workspace.CurrentCamera;
+							if camera then
+								circleCenter = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 2);
+							end
+						end
+						local fovThickness = 1;
+						local fovSilentColor = Color3.new(1, 1, 1);
+						local offsetY = 40;
+						local silentFOVv = Drawing.new("Circle");
+						local screenResolutionf = game:GetService("GuiService"):GetScreenResolution();
+						silentFOVv.Radius = silentFOVRadius;
+						silentFOVv.Thickness = fovThickness;
+						silentFOVv.Color = fovSilentColor;
+						silentFOVv.Transparency = 1;
+						silentFOVv.Visible = false;
+						local function updateCirclePosition()
+							local mouse = game.Players.LocalPlayer:GetMouse();
+							silentFOVv.Position = Vector2.new(mouse.X, mouse.Y + offsetY);
+						end
+						local silentaim = aim:section({name="silent",side="right",size=275});
+						silentaim:toggle({name="enabled",def=false,callback=function(bool)
+							silentaimenabled = bool;
+						end});
+						silentaim:toggle({name="visiblecheck",def=false,callback=function(bool)
+							visiblechecksilent = bool;
+						end});
+						silentaim:toggle({name="maxdistance",def=false,callback=function(bool)
+							maxdistancesilent = bool;
+						end});
+						silentaim:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							maxdistancesilentSize = value;
+						end});
+						silentaim:toggle({name="hitchance",def=false,callback=function(bool)
+							hitchanceenabled = bool;
+						end});
+						silentaim:slider({name="hitchance",def=100,max=100,min=1,rounding=false,callback=function(value)
+							hitchance = value;
+						end});
+						silentaim:dropdown({name="hitbox",def="head",max=4,options={"head","neck","torso"},callback=function(option)
+							if (option == "head") then
+								silenttargetpart = "Head";
+							elseif (option == "neck") then
+								silenttargetpart = "UpperTorso";
+							elseif (option == "torso") then
+								silenttargetpart = "HumanoidRootPart";
+							end
+						end});
+						silentaim:toggle({name="showfov",def=false,callback=function(bool)
+							silentFOVv.Visible = bool;
+						end});
+						silentaim:colorpicker({name="fovcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							fovSilentColor = color;
+							silentFOVv.Color = color;
+						end});
+						silentaim:slider({name="fovsize",def=100,max=1000,min=1,rounding=false,callback=function(value)
+							silentFOVRadius = value;
+							silentFOVv.Radius = value;
+						end});
+						_G.AAEnabled = false;
+						_G.amountLol = 20;
+						game:GetService("RunService").heartbeat:Connect(function()
+							if (_G.AAEnabled == true) then
+								local lol = game.Players.LocalPlayer.Character.HumanoidRootPart;
+								if lol then
+									local LOL = lol.Velocity;
+									lol.CFrame = lol.CFrame * CFrame.Angles(0, 0.0001, 0);
+									lol.AssemblyLinearVelocity = Vector3.new(math.random(_G.amountLol), math.random(_G.amountLol), math.random(_G.amountLol));
+									game:GetService("RunService").RenderStepped:Wait();
+									lol.Velocity = LOL;
+								end
+							end
+						end);
+						local antiaim = aim:section({name="antiaim",side="left",size=80});
+						antiaim:toggle({name="antiaim",def=false,callback=function(bool)
+							_G.AAEnabled = bool;
+						end});
+						antiaim:slider({name="antiamount",def=20,max=5000,min=1,rounding=false,callback=function(value)
+							_G.amountLol = value;
+						end});
+						local gunmods = guns:section({name="weapon",side="left",size=205});
+						gunmods:toggle({name="norecoil",def=false,callback=function(bool)
+							for ind, zaza in ipairs(game:GetService("ReplicatedStorage").RangedWeapons:GetChildren()) do
+								for i, folder in ipairs(zaza:GetChildren()) do
+									if (folder.Name == "RecoilPatternDisabled") then
+										folder.Name = "RecoilPattern";
+									end
+									for j, val in ipairs(folder:GetChildren()) do
+										for k, valtwo in ipairs(val:GetChildren()) do
+											if bool then
+												valtwo.Value = 0;
+											else
+												valtwo.Value = 0.02;
+											end
+										end
+									end
+								end
+							end
+						end});
+						gunmods:toggle({name="noshotgunspread",def=false,callback=function(bool)
+							for _, Item in pairs(repStorage.AmmoTypes:GetChildren()) do
+								if (bool and (Item:GetAttribute("AccuracyDeviation") ~= nil)) then
+									Item:SetAttribute("AccuracyDeviation", 0);
+								elseif ((Item:GetAttribute("AccuracyDeviation") ~= nil) and not bool) then
+									Item:SetAttribute("AccuracyDeviation", Old_Ammo[Item.Name]['Spread']);
+								end
+							end
+						end});
+						gunmods:toggle({name="doubletap",def=false,callback=function(bool)
+							for _, Item in pairs(repStorage.AmmoTypes:GetChildren()) do
+								if (bool and (Item:GetAttribute("Pellets") ~= nil)) then
+									Item:SetAttribute("Pellets", Old_Ammo[Item.Name]['Pellets'] * 2);
+								elseif (not bool and (Item:GetAttribute("Pellets") ~= nil)) then
+									Item:SetAttribute("Pellets", Old_Ammo[Item.Name]['Pellets']);
+								end
+							end
+						end});
+						gunmods:toggle({name="instanthit",def=false,callback=function(bool)
+							gnsettings.instanthit = bool;
+						end});
+						local OldWeaponMods_QuickAim = {};
+						gunmods:toggle({name="quickaim",def=false,callback=function(bool)
+							if bool then
+								OldWeaponMods_QuickAim = {};
+								for i, v in next, repStorage.Players[plr.Name].Inventory:GetChildren() do
+									local module = require(v.SettingsModule);
+									table.insert(OldWeaponMods_QuickAim, module.AimInSpeed);
+									table.insert(OldWeaponMods_QuickAim, module.AimOutSpeed);
+									module.AimInSpeed = 0;
+									module.AimOutSpeed = 0;
+								end
+							else
+								for i, v in next, repStorage.Players[plr.Name].Inventory:GetChildren() do
+									local module = require(v.SettingsModule);
+									for i2, v2 in next, OldWeaponMods_QuickAim do
+										module.AimInSpeed = v2;
+										module.AimOutSpeed = v2;
+									end
+								end
+							end
+						end});
+						gunmods:toggle({name="nobulletdrop",def=false,callback=function(bool)
+							for _, Item in pairs(repStorage.AmmoTypes:GetChildren()) do
+								if bool then
+									Item:SetAttribute("ProjectileDrop", 0);
+								else
+								end
+							end
+						end});
+						local function applyRapid(gun)
+							if gun then
+								if gun:FindFirstChild("SettingsModule") then
+									local module = require(gun.SettingsModule);
+									module['FireModes'][1] = "Auto";
+									module['FireRate'] = gnsettings.firerate / 100;
+								end
+							end
+						end
+						gunmods:button({name="rapidfire",callback=function()
+							gnsettings.rapidfire = true;
+						end});
+						gunmods:slider({name="rapidrate (lower = faster)",def=1,max=20,min=1,rounding=false,callback=function(value)
+							gnsettings.firerate = value;
+						end});
+						local soundssec = guns:section({name="sounds",side="left",size=140});
+						local hitsoundenabled = false;
+						local hitsoundid = "rbxassetid://5633695679";
+						local hitsoundvolume = 1;
+						local hitlogsenable = false;
+						local nobobenabled = false;
+						soundssec:toggle({name="hitsound",def=false,callback=function(bool)
+							hitsoundenabled = bool;
+						end});
+						soundssec:dropdown({name="sound",def="bell",max=7,options={"bell","cod","pop","rust","neverlose"},callback=function(option)
+							if (option == "bell") then
+								hitsoundid = "rbxassetid://5633695679";
+								hitsoundvolume = 1;
+							elseif (option == "cod") then
+								hitsoundid = "rbxassetid://5952120301";
+								hitsoundvolume = 5;
+							elseif (option == "pop") then
+								hitsoundid = "rbxassetid://7147454322";
+								hitsoundvolume = 5;
+							elseif (option == "rust") then
+								hitsoundid = "rbxassetid://4764109000";
+								hitsoundvolume = 1;
+							elseif (option == "neverlose") then
+								hitsoundid = "rbxassetid://6607204501";
+								hitsoundvolume = 2;
+							end
+						end});
+						soundssec:slider({name="volume",def=1,max=10,min=0,rounding=false,callback=function(value)
+							hitsoundvolume = value;
+						end});
+						soundssec:button({name="testsound",callback=function()
+							local snd = Instance.new("Sound", workspace);
+							snd.SoundId = hitsoundid;
+							snd.PlayOnRemove = true;
+							snd.Volume = hitsoundvolume;
+							snd:Destroy();
+						end});
+						local chamsarmsenabled = false;
+						local selectedcolorarms = Color3.fromRGB(122, 0, 255);
+						local selectedmaterialarms = "ForceField";
+						local chamsgunenabled = false;
+						local snaplinesaim = false;
+						local snaplinecolor = Color3.fromRGB(122, 0, 255);
+						local bulletracersenabled = false;
+						local selectedgun = Color3.fromRGB(122, 0, 255);
+						local seelectedmaterialgun = "ForceField";
+						local visualsmods = guns:section({name="visuals",side="right",size=325});
+						visualsmods:toggle({name="armchams",def=false,callback=function(bool)
+							chamsarmsenabled = bool;
+						end});
+						visualsmods:colorpicker({name="armcolor",cpname="",def=Color3.new(0.603921, 0.011764, 1),callback=function(color)
+							selectedcolorarms = color;
+						end});
+						visualsmods:dropdown({name="armmaterial",def="ForceField",max=8,options={"SmoothPlastic","ForceField","Neon","Ice","Glass","Limestone","Mud"},callback=function(option)
+							selectedmaterialarms = option;
+						end});
+						visualsmods:toggle({name="gunchams",def=false,callback=function(bool)
+							chamsgunenabled = bool;
+						end});
+						visualsmods:colorpicker({name="guncolor",cpname="",def=Color3.new(0.603921, 0.011764, 1),callback=function(color)
+							selectedgun = color;
+						end});
+						visualsmods:dropdown({name="gunmaterial",def="ForceField",max=8,options={"SmoothPlastic","ForceField","Neon","Ice","Glass","Limestone","Mud"},callback=function(option)
+							seelectedmaterialgun = option;
+						end});
+						visualsmods:toggle({name="bulletracers",def=false,callback=function(bool)
+							BTracersSettings['enabled'] = bool;
+						end});
+						visualsmods:dropdown({name="bulletmaterial",def="Stretch",max=4,options={"Stretch","Wrap","Static"},callback=function(option)
+							BTracersSettings['Texture'] = option;
+						end});
+						visualsmods:colorpicker({name="bulletcolor",cpname="",def=Color3.new(0.603921, 0.011764, 1),callback=function(color)
+							BTracersSettings['Color'] = color;
+						end});
+						visualsmods:toggle({name="snaplines",def=false,callback=function(bool)
+							snaplinesaim = bool;
+						end});
+						visualsmods:colorpicker({name="snapcolor",cpname="",def=Color3.new(0.603921, 0.011764, 1),callback=function(color)
+							snaplinecolor = color;
+						end});
+						visualsmods:toggle({name="targetinfo",def=false,callback=function(bool)
+							gnsettings.targetinfo = bool;
+							centerScreenTarget.Visible = bool;
+						end});
+						local function deleteArms()
+							local viewModel = workspace.CurrentCamera:FindFirstChild("ViewModel");
+							if viewModel then
+								local lla = viewModel:FindFirstChild("LeftLowerArm");
+								local rla = viewModel:FindFirstChild("RightLowerArm");
+								local lua = viewModel:FindFirstChild("LeftUpperArm");
+								local rua = viewModel:FindFirstChild("RightUpperArm");
+								local lh = viewModel:FindFirstChild("LeftHand");
+								local rh = viewModel:FindFirstChild("RightHand");
+								for i, v in ipairs(viewModel:GetChildren()) do
+									if v:IsA("Model") then
+										if (not v.Name == "Item") then
+											v:Destroy();
+										end
+									end
+								end
+								lla:Destroy();
+								rla:Destroy();
+								lua:Destroy();
+								rua:Destroy();
+								lh:Destroy();
+								rh:Destroy();
+							end
+						end
+						local function customItem()
+							local viewModel = workspace.CurrentCamera:FindFirstChild("ViewModel");
+							if viewmodel then
+								for i, v in ipairs(viewModel:GetChildren()) do
+									if v:IsA("Model") then
+										if (v.Name == "Item") then
+											if (v.ItemRoot.MeshId == "rbxassetid://7956269827") then
+												local part = Instance.new("Part");
+												part.Size = Vector3.new(1, 1, 1);
+												part.Anchored = false;
+												part.CanCollide = false;
+												local mesh = Instance.new("SpecialMesh");
+												mesh.MeshType = Enum.MeshType.FileMesh;
+												mesh.MeshId = "rbxassetid://677827629";
+												mesh.TextureId = "rbxassetid://677827685";
+												mesh.Offset = Vector3.new(0, 0, 0);
+												mesh.Scale = Vector3.new(1, 1, 1);
+												mesh.Parent = part;
+												local box = Instance.new("SelectionBox");
+												box.Adornee = part;
+												box.Parent = part;
+												box.Visible = false;
+												part.Parent = v;
+												local weld = viewModel.HumanoidRootPart.ItemRoot;
+												local w2 = weld:Clone();
+												w2.Name = "ZAZAZAZAZA";
+												w2.Part0 = v.ItemRoot;
+												w2.Part1 = part;
+												w2.Parent = weld.Parent;
+												w2.C0 = CFrame.new(0, 0, 0);
+												w2.C1 = CFrame.new(0, 0, 0);
+												v.ItemRoot.Size = Vector3.zero;
+											end
+										end
+									end
+								end
+							end
+						end
+						local meta = getrawmetatable(game);
+						setreadonly(meta, false);
+						local oldNamecall = meta.__namecall;
+						local oldNewindex = meta.__newindex;
+						local speedass;
+						meta.__namecall = newcclosure(function(self, ...)
+							local args = {...};
+							local met = getnamecallmethod();
+							if (met == "InvokeServer") then
+								if (self.Name == "FireProjectile") then
+									if BTracersSettings['enabled'] then
+										spawn(function()
+											local from = CHEAT_CLIENT.player.Character:FindFirstChild("Head");
+											if from then
+												if silentaimenabled then
+													if isCharacterInCircles() then
+														for _, player in pairs(game.Players:GetPlayers()) do
+															local character = player.Character;
+															if (character and isCharacterInCircles(character)) then
+																if shouldAdjustAim() then
+																	createTracer(from, character.Head.Position);
+																end
+															end
+														end
+													end
+												else
+													createTracer(from, CHEAT_CLIENT.player:GetMouse().Hit.Position);
+												end
+											end
+										end);
+									end
+								elseif (self.Name == "Equip") then
+									spawn(function()
+										if gnsettings.rapidfire then
+											local gunZAZAZ = args[1];
+											applyRapid(gunZAZAZ);
+										end
+										if viewmodelsettings.destoryarms then
+											task.wait(0.1);
+											deleteArms();
+										end
+										if viewmodelsettings.customModel then
+											task.wait(0.1);
+											customItem();
+										end
+									end);
+								end
+							end
+							if (met == "FireServer") then
+								if ((self.Name == "MeleeInflict") or (self.Name == "ProjectileInflict")) then
+									if hitsoundenabled then
+										spawn(function()
+											local snd = Instance.new("Sound", workspace);
+											snd.SoundId = hitsoundid;
+											snd.PlayOnRemove = true;
+											snd.Volume = hitsoundvolume;
+											snd:Destroy();
+										end);
+									end
+								end
+							end
+							if (met == "FireServer") then
+								if (self.Name == "ProjectileInflict") then
+									if hitlogsenable then
+										spawn(function()
+											local playerPart = args[1];
+											local playerName = playerPart.Parent;
+											createNotify("hitlog | you hitted: " .. tostring(playerName) .. " | in: " .. tostring(playerPart));
+										end);
+									end
+								elseif (self.Name == "MeleeInflict") then
+									if hitlogsenable then
+										spawn(function()
+											local playerName = args[1];
+											local playerPart = args[2];
+											createNotify("hitlog | you hitted: " .. tostring(playerName) .. " | in: " .. tostring(playerPart));
+										end);
+									end
+								end
+							end
+							if (met == "FireServer") then
+								if (self.Name == "Drowning") then
+									if playersettings.nodrowning then
+										return;
+									end
+								end
+							end
+							local bspeed = 3000;
+							if (met == "GetAttribute") then
+								if gnsettings.instanthit then
+									if (args[1] == "MuzzleVelocity") then
+										return bspeed;
+									end
+								end
+							end
+							if (met == "FireServer") then
+								if (self.Name == "ProjectileInflict") then
+									if gnsettings.instanthit then
+										local Distance = (args[1].Position - camxd.CFrame.Position).magnitude;
+										if (Distance < 1000) then
+											print(Distance);
+											bspeed = 3000;
+										elseif (Distance < 2000) then
+											print(Distance);
+											bspeed = 6000;
+										elseif (Distance < 3000) then
+											print(Distance);
+											bspeed = 10000;
+										end
+									end
+								end
+							end
+							return oldNamecall(self, unpack(args));
+						end);
+						local esplib = loadstring(game:HttpGet("https://raw.githubusercontent.com/CocaColaManNig/dy3463/main/jfiwojt.lua", true))();
+						esplib.options.enabled = false;
+						esplib.options.boxes = false;
+						esplib.options.boxesFill = false;
+						esplib.options.names = false;
+						esplib.options.healthBars = false;
+						esplib.options.healthText = false;
+						esplib.options.distance = false;
+						esplib.options.chams = false;
+						esplib:Load();
+						local resourcesESPLIB = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Sirius/request/library/sense/source.lua"))();
+						resourcesESPLIB.teamSettings.enemy.chamsFillColor = {Color3.fromRGB(122, 0, 255),0};
+						resourcesESPLIB.teamSettings.friendly.chamsFillColor = {Color3.fromRGB(122, 0, 255),0};
+						resourcesESPLIB.teamSettings.enemy.chamsOutlineColor = {Color3.fromRGB(122, 0, 255),1};
+						resourcesESPLIB.teamSettings.friendly.chamsOutlineColor = {Color3.fromRGB(122, 0, 255),1};
+						resourcesESPLIB:Load();
+						local exitESPs = {};
+						local exitLocationsFolder = workspace:FindFirstChild("NoCollision"):FindFirstChild("ExitLocations");
+						if exitLocationsFolder then
+							print("melonware.cc | ✅ | loaded exit locations");
+							for _, resource in ipairs(exitLocationsFolder:GetChildren()) do
+								table.insert(exitESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+						else
+							print("melonware.cc | ❌ | failed to load exit locations [probably you're in lobby]");
+						end
+						local powerpESPs = {};
+						local GasStationESPs = {};
+						local HeliCrashESPs = {};
+						local BridgeESPs = {};
+						local AirdropESPs = {};
+						local SawmillESPs = {};
+						local TownESPs = {};
+						local FactoryESPs = {};
+						local aiLocationsFolder = workspace:FindFirstChild("AiZones");
+						if (aiLocationsFolder and (#aiLocationsFolder:GetChildren() > 0)) then
+							print("melonware.cc | ✅ | loaded ai esp");
+							for _, resource in ipairs(aiLocationsFolder.PowerPlant:GetChildren()) do
+								table.insert(powerpESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.GasStation:GetChildren()) do
+								table.insert(GasStationESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.HeliCrash:GetChildren()) do
+								table.insert(HeliCrashESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.Bridge:GetChildren()) do
+								table.insert(BridgeESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.Airdrop:GetChildren()) do
+								table.insert(AirdropESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.Sawmill:GetChildren()) do
+								table.insert(SawmillESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.Town:GetChildren()) do
+								table.insert(TownESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+							for _, resource in ipairs(aiLocationsFolder.Factory:GetChildren()) do
+								table.insert(FactoryESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+							end
+						else
+							print("melonware.cc | ❌ | failed to load ai esp [probably you're in lobby]");
+						end
+						local player = vis:section({name="player",side="left",size=500});
+						player:toggle({name="enabled",def=false,callback=function(bool)
+							esplib.options.enabled = bool;
+						end});
+						player:toggle({name="box",def=false,callback=function(bool)
+							esplib.options.boxes = bool;
+						end});
+						player:colorpicker({name="boxcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.boxesColor = color;
+						end});
+						player:toggle({name="fillbox",def=false,callback=function(bool)
+							esplib.options.boxFill = bool;
+						end});
+						player:colorpicker({name="fillboxcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.boxFillColor = color;
+						end});
+						player:toggle({name="healthbar",def=false,callback=function(bool)
+							esplib.options.healthBars = bool;
+						end});
+						player:toggle({name="healthtext",def=false,callback=function(bool)
+							esplib.options.healthText = bool;
+						end});
+						player:colorpicker({name="healthtextcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.healthTextColor = color;
+						end});
+						player:toggle({name="names",def=false,callback=function(bool)
+							esplib.options.names = bool;
+						end});
+						player:colorpicker({name="namescolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.nameColor = color;
+						end});
+						player:toggle({name="weapon",def=false,callback=function(bool)
+							esplib.options.weapon = bool;
+						end});
+						player:colorpicker({name="weaponcolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.weaponColor = color;
+						end});
+						player:toggle({name="distance",def=false,callback=function(bool)
+							esplib.options.distance = bool;
+						end});
+						player:colorpicker({name="distancecolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.distanceColor = color;
+						end});
+						player:toggle({name="tracer",def=false,callback=function(bool)
+							esplib.options.tracers = bool;
+						end});
+						player:colorpicker({name="tracercolor",cpname="",def=Color3.new(1, 1, 1),callback=function(color)
+							esplib.options.tracerColor = color;
+						end});
+						player:dropdown({name="tracerpos",def="top",max=4,options={"top","center","bottom"},callback=function(option)
+							if (option == "top") then
+								esplib.options.tracerOrigin = "Top";
+							elseif (option == "center") then
+								esplib.options.tracerOrigin = "Mouse";
+							elseif (option == "bottom") then
+								esplib.options.tracerOrigin = "Bottom";
+							end
+						end});
+						player:toggle({name="maxdistance",def=false,callback=function(bool)
+							esplib.options.limitDistance = bool;
+						end});
+						player:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							esplib.options.maxDistance = value;
+						end});
+						player:slider({name="fontsize",def=12,max=30,min=1,rounding=false,callback=function(value)
+							esplib.options.fontSize = value;
+						end});
+						player:toggle({name="visibleonly",def=false,callback=function(bool)
+							esplib.options.visibleOnly = bool;
+						end});
+						local npcesp = vis:section({name="npc",side="right",size=215});
+						npcesp:toggle({name="powerplant",def=false,callback=function(bool)
+							for _, esp in powerpESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="gasstation",def=false,callback=function(bool)
+							for _, esp in GasStationESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="helicrash",def=false,callback=function(bool)
+							for _, esp in HeliCrashESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="sawmill",def=false,callback=function(bool)
+							for _, esp in SawmillESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="town",def=false,callback=function(bool)
+							for _, esp in TownESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="factory",def=false,callback=function(bool)
+							for _, esp in FactoryESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="bridge",def=false,callback=function(bool)
+							for _, esp in BridgeESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						npcesp:toggle({name="maxdistance",def=false,callback=function(bool)
+							for _, esp in powerpESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in HeliCrashESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in BridgeESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in FactoryESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in TownESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in SawmillESPs do
+								esp.options.limitDistance = bool;
+							end
+						end});
+						npcesp:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							for _, esp in powerpESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in HeliCrashESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in BridgeESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in FactoryESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in TownESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in SawmillESPs do
+								esp.options.maxDistance = value;
+							end
+						end});
+						local chamssex = vis:section({name="chams",side="right",size=85});
+						chamssex:toggle({name="enabled",def=false,callback=function(bool)
+							resourcesESPLIB.teamSettings.enemy.enabled = bool;
+							resourcesESPLIB.teamSettings.friendly.enabled = bool;
+							resourcesESPLIB.teamSettings.enemy.chams = bool;
+							resourcesESPLIB.teamSettings.friendly.chams = bool;
+						end});
+						chamssex:toggle({name="visibleonly",def=false,callback=function(bool)
+							resourcesESPLIB.teamSettings.enemy.chamsVisibleOnly = bool;
+							resourcesESPLIB.teamSettings.friendly.chamsVisibleOnly = bool;
+						end});
+						chamssex:colorpicker({name="color",cpname="",def=Color3.new(0.603921, 0.011764, 1),callback=function(color)
+							resourcesESPLIB.teamSettings.enemy.chamsFillColor = {color,0};
+							resourcesESPLIB.teamSettings.friendly.chamsFillColor = {color,0};
+						end});
+						local centerPosition = Vector2.new(game.Workspace.CurrentCamera.ViewportSize.X / 2, game.Workspace.CurrentCamera.ViewportSize.Y / 2);
+						local clothingitemsenabled = false;
+						local function distance(point1, point2)
+							return (point1 - point2).magnitude;
+						end
+						local function findClosestPlayerInCircle(center, silentFOVRadius)
+							local closestPlayer = nil;
+							local closestDistance = math.huge;
+							local localPlayer = game.Players.LocalPlayer;
+							for _, player in ipairs(game.Players:GetPlayers()) do
+								if ((player ~= localPlayer) and player.Character and player.Character:FindFirstChild("HumanoidRootPart")) then
+									local playerPosition = player.Character.HumanoidRootPart.Position;
+									local playerScreenPosition = game.Workspace.CurrentCamera:WorldToScreenPoint(playerPosition);
+									local distToCenter = distance(center, Vector2.new(playerScreenPosition.X, playerScreenPosition.Y));
+									if (distToCenter <= silentFOVRadius) then
+										local dist = distance(center, Vector2.new(playerScreenPosition.X, playerScreenPosition.Y));
+										if (dist < closestDistance) then
+											closestPlayer = player;
+											closestDistance = dist;
+										end
+									end
+								end
+							end
+							return closestPlayer;
+						end
+						local function isPlayerVisible(player, targetPlayer)
+							local camera = game.Workspace.CurrentCamera;
+							local targetCharacter = targetPlayer.Character;
+							if not targetCharacter then
+								return false;
+							end
+							local ray = Ray.new(camera.CFrame.Position, (targetCharacter.Head.Position - camera.CFrame.Position).unit * 1000);
+							local part, position = workspace:FindPartOnRay(ray, player.Character, false, true);
+							if (part and not part:IsDescendantOf(targetCharacter)) then
+								return false;
+							end
+							return true;
+						end
+						local snaplineaimattach = Drawing.new("Line");
+						local meez = game.Players.LocalPlayer;
+						local function printClosestPlayerName()
+							local closestPlayer = findClosestPlayerInCircle(centerPosition, silentFOVRadius);
+							if closestPlayer then
+								playertxt.Text = "player -> " .. closestPlayer.Name;
+								player_2.Text = "player -> " .. closestPlayer.Name;
+								removeItemText();
+								removeClothingText();
+								local playerFolder = game.ReplicatedStorage.Players:FindFirstChild(closestPlayer.Name);
+								if playerFolder then
+									local inventoryFolder = playerFolder:FindFirstChild("Inventory");
+									if inventoryFolder then
+										for i, v in pairs(inventoryFolder:GetChildren()) do
+											if v:IsA("StringValue") then
+												createItemText("item" .. i .. " -> " .. v.Name);
+											end
+										end
+									end
+									local clothingFolder = playerFolder:FindFirstChild("Clothing");
+									if clothingFolder then
+										for i, v in pairs(clothingFolder:GetChildren()) do
+											if v:IsA("StringValue") then
+												createItemTextClothing("clothing" .. i .. " -> " .. v.Name);
+												local clothingItem = v:FindFirstChild("Inventory");
+												if clothingItem then
+													if clothingitemsenabled then
+														for i2, v2 in pairs(clothingItem:GetChildren()) do
+															if v2:IsA("StringValue") then
+																createItemTextClothing("   -> " .. v2.Name);
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+								if gnsettings.targetinfo then
+									targetname.Text = "target: " .. closestPlayer.Name;
+									if isPlayerVisible(meez, closestPlayer) then
+										targetvisibilty.Text = "visible: true";
+										targetvisibilty.TextColor3 = Color3.fromRGB(79, 235, 52);
+									else
+										targetvisibilty.Text = "visible: false";
+										targetvisibilty.TextColor3 = Color3.fromRGB(122, 0, 255);
+									end
+									if workspace:FindFirstChild(closestPlayer.Name) then
+										targethealth.Text = "health: " .. tostring(workspace:FindFirstChild(closestPlayer.Name).Humanoid.Health) .. "/100hp";
+									else
+										targethealth.Text = "health: 0hp/100hp";
+									end
+								end
+								local character2 = closestPlayer.Character;
+								local Vectorxd = camxd:WorldToViewportPoint(character2:FindFirstChild(silenttargetpart).Position);
+								if snaplinesaim then
+									if visiblechecksilent then
+										if isPlayerVisible(meez, closestPlayer) then
+											snaplineaimattach.Visible = true;
+											snaplineaimattach.Color = snaplinecolor;
+											snaplineaimattach.From = Vector2.new(uis:GetMouseLocation().X, uis:GetMouseLocation().Y);
+											snaplineaimattach.To = Vector2.new(Vectorxd.X, Vectorxd.Y);
+											snaplineaimattach.Thickness = 1;
+										else
+											snaplineaimattach.Visible = false;
+										end
+									else
+										snaplineaimattach.Visible = true;
+										snaplineaimattach.Color = snaplinecolor;
+										snaplineaimattach.From = Vector2.new(uis:GetMouseLocation().X, uis:GetMouseLocation().Y);
+										snaplineaimattach.To = Vector2.new(Vectorxd.X, Vectorxd.Y);
+										snaplineaimattach.Thickness = 1;
+									end
+								else
+									snaplineaimattach.Visible = false;
+								end
+							else
+								playertxt.Text = "player -> ";
+								player_2.Text = "player -> ";
+								removeItemText();
+								removeClothingText();
+								if snaplinesaim then
+									snaplineaimattach.Visible = false;
+								end
+								targetname.Text = "target: none";
+								targetvisibilty.Text = "visible: none";
+								targetvisibilty.TextColor3 = Color3.fromRGB(122, 0, 255);
+								targethealth.Text = "health: none/100hp";
+							end
+						end
+						local xposviewerinv = 0.823933899;
+						local yposviewerinv = 0.0852022469;
+						local xposviewercloth = 0.179596946;
+						local yposviewercloth = 0.502957046;
+						local othervisesp = vis:section({name="other",side="right",size=210});
+						local ez1 = false;
+						local ez2 = false;
+						othervisesp:toggle({name="inventoryviewer",def=false,callback=function(bool)
+							ez2 = bool;
+							inventory.Visible = bool;
+						end});
+						othervisesp:slider({name="xpos",def=0.823933899,max=1,min=0,rounding=false,callback=function(value)
+							xposviewerinv = value;
+							inventory.Position = UDim2.new(value, 0, yposviewerinv, 0);
+						end});
+						othervisesp:slider({name="ypos",def=0.0852022469,max=1,min=0,rounding=false,callback=function(value)
+							yposviewerinv = value;
+							inventory.Position = UDim2.new(xposviewerinv, 0, value, 0);
+						end});
+						othervisesp:toggle({name="clothingviewer",def=false,callback=function(bool)
+							ez1 = bool;
+							clothing.Visible = bool;
+						end});
+						othervisesp:toggle({name="clothingitems[lags]",def=false,callback=function(bool)
+							clothingitemsenabled = bool;
+						end});
+						othervisesp:slider({name="xpos",def=0.178596946,max=1,min=0,rounding=false,callback=function(value)
+							xposviewercloth = value;
+							clothing.Position = UDim2.new(value, 0, yposviewercloth, 0);
+						end});
+						othervisesp:slider({name="ypos",def=0.0915467888,max=1,min=0,rounding=false,callback=function(value)
+							yposviewercloth = value;
+							clothing.Position = UDim2.new(xposviewercloth, 0, value, 0);
+						end});
+						local droppedItemsESPs = {};
+						for _, resource in workspace.DroppedItems:GetChildren() do
+							table.insert(droppedItemsESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+						end
+						local smallmilitaryESPs = {};
+						local namesmb = "SmallMilitaryBox";
+						for _, resource in workspace.Containers:GetChildren() do
+							if (resource.Name ~= namesmb) then
+								continue;
+							end
+							table.insert(smallmilitaryESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=300}));
+						end
+						local largemilitaryESPs = {};
+						local namelmb = "LargeMilitaryBox";
+						for _, resource in workspace.Containers:GetChildren() do
+							if (resource.Name ~= namelmb) then
+								continue;
+							end
+							table.insert(largemilitaryESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=300}));
+						end
+						local militarycrateESPs = {};
+						local namemc = "MilitaryCrate";
+						for _, resource in workspace.Containers:GetChildren() do
+							if (resource.Name ~= namemc) then
+								continue;
+							end
+							table.insert(militarycrateESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=300}));
+						end
+						local fillingcabinetESPs = {};
+						local namefc = "FilingCabinet";
+						for _, resource in workspace.Containers:GetChildren() do
+							if (resource.Name ~= namefc) then
+								continue;
+							end
+							table.insert(fillingcabinetESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=300}));
+						end
+						local questItemsESPs = {};
+						for _, resource in workspace.QuestItems:GetChildren() do
+							table.insert(questItemsESPs, resourcesESPLIB.AddInstance(resource, {enabled=false,text="{name} ({distance}m)",textColor={Color3.new(1, 1, 1),1},textOutline=true,textOutlineColor=Color3.new(),textSize=13,textFont=2,limitDistance=false,maxDistance=150}));
+						end
+						local worldesp = wor:section({name="worldesp",side="left",size=195});
+						worldesp:toggle({name="smallmilitarybox",def=false,callback=function(bool)
+							for _, esp in smallmilitaryESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="largemilitarybox",def=false,callback=function(bool)
+							for _, esp in largemilitaryESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="militarycrate",def=false,callback=function(bool)
+							for _, esp in militarycrateESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="fillingcabinet",def=false,callback=function(bool)
+							for _, esp in fillingcabinetESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="droppeditems[laggy]",def=false,callback=function(bool)
+							for _, esp in droppedItemsESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="questitems",def=false,callback=function(bool)
+							for _, esp in questItemsESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						worldesp:toggle({name="maxdistance",def=false,callback=function(bool)
+							for _, esp in questItemsESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in droppedItemsESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in smallmilitaryESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in largemilitaryESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in militarycrateESPs do
+								esp.options.limitDistance = bool;
+							end
+							for _, esp in fillingcabinetESPs do
+								esp.options.limitDistance = bool;
+							end
+						end});
+						worldesp:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							for _, esp in questItemsESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in droppedItemsESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in militarycrateESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in smallmilitaryESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in largemilitaryESPs do
+								esp.options.maxDistance = value;
+							end
+							for _, esp in fillingcabinetESPs do
+								esp.options.maxDistance = value;
+							end
+						end});
+						local otherworld = wor:section({name="other",side="right",size=165});
+						otherworld:toggle({name="exit",def=false,callback=function(bool)
+							for _, esp in exitESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						otherworld:toggle({name="maxdistance",def=false,callback=function(bool)
+							for _, esp in exitESPs do
+								esp.options.limitDistance = bool;
+							end
+						end});
+						otherworld:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							for _, esp in exitESPs do
+								esp.options.maxDistance = value;
+							end
+						end});
+						otherworld:toggle({name="airdrop",def=false,callback=function(bool)
+							for _, esp in AirdropESPs do
+								esp.options.enabled = bool;
+							end
+						end});
+						otherworld:toggle({name="maxdistance",def=false,callback=function(bool)
+							for _, esp in AirdropESPs do
+								esp.options.limitDistance = bool;
+							end
+						end});
+						otherworld:slider({name="maxdistance",def=1000,max=10000,min=1,rounding=false,callback=function(value)
+							for _, esp in AirdropESPs do
+								esp.options.maxDistance = value;
+							end
+						end});
+						local Terrain = game.Workspace:FindFirstChildOfClass("Terrain");
+						local worldvis = wor:section({name="visuals",side="left",size=305});
+						worldvis:toggle({name="fullbright",def=false,callback=function(bool)
+							game:GetService("Lighting").Fullbright.Enabled = bool;
+						end});
+						worldvis:toggle({name="nograss",def=false,callback=function(bool)
+							if (bool == true) then
+								sethiddenproperty(game.Workspace.Terrain, "Decoration", false);
+							elseif (bool == false) then
+								sethiddenproperty(game.Workspace.Terrain, "Decoration", true);
+							end
+						end});
+						local nowaterbluroption = false;
+						local ambientenabled = false;
+						local ambientcolor = Color3.new(0, 0, 0);
+						worldvis:toggle({name="nowaterblur",def=false,callback=function(bool)
+							nowaterbluroption = bool;
+						end});
+						worldvis:toggle({name="nodrowning",def=false,callback=function(bool)
+							playersettings.nodrowning = bool;
+						end});
+						local clouds = Terrain:FindFirstChildOfClass("Clouds");
+						local coregui = game['CoreGui'];
+						worldvis:toggle({name="noclouds",def=false,callback=function(bool)
+							clouds.Parent = (bool and coregui) or Terrain;
+						end});
+						worldvis:toggle({name="nofog",def=false,callback=function(bool)
+							if bool then
+								game:GetService("Lighting").Atmosphere.Density = 0;
+							else
+								game:GetService("Lighting").Atmosphere.Density = 0.3;
+							end
+						end});
+						worldvis:toggle({name="noshadows",def=false,callback=function(bool)
+							if bool then
+								game:GetService("Lighting").GlobalShadows = false;
+							else
+								game:GetService("Lighting").GlobalShadows = true;
+							end
+						end});
+						worldvis:toggle({name="nosunray",def=false,callback=function(bool)
+							if bool then
+								game:GetService("Lighting").Rays.Enabled = false;
+							else
+								game:GetService("Lighting").Rays.Enabled = true;
+							end
+						end});
+						worldvis:toggle({name="nobloom",def=false,callback=function(bool)
+							if bool then
+								game:GetService("Lighting").Bloom.Intensity = 0;
+								game:GetService("Lighting").Bloom.Size = 0;
+							else
+								game:GetService("Lighting").Bloom.Intensity = 0.3;
+								game:GetService("Lighting").Bloom.Size = 23;
+							end
+						end});
+						local leafTable = {};
+						worldvis:toggle({name="nofoliage",def=false,callback=function(bool)
+							if bool then
+								for i, v in next, game:GetService("Workspace").SpawnerZones.Foliage:GetDescendants() do
+									if (v:IsA("MeshPart") and (v.TextureID == "")) then
+										leafTable[i] = {Part=v,Old=v.Parent};
+										v.Parent = cgui;
+									end
+								end
+							else
+								pcall(function()
+									for i, v in pairs(leafTable) do
+										v.Part.Parent = v.Old;
+									end
+									leafTable = {};
+								end);
+							end
+						end});
+						worldvis:toggle({name="ambient",def=false,callback=function(bool)
+							ambientenabled = bool;
+							if bool then
+								game.Lighting.Ambient = ambientcolor;
+							else
+								game.Lighting.Ambient = Color3.fromRGB(0, 0, 0);
+							end
+						end});
+						worldvis:colorpicker({name="ambientcolor",cpname="",def=Color3.new(0, 0, 0),callback=function(color)
+							ambientcolor = color;
+							if ambientenabled then
+								game.Lighting.Ambient = color;
+							else
+								game.Lighting.Ambient = Color3.new(1, 1, 1);
+							end
+						end});
+						worldvis:dropdown({name="skybox",def="Standard",max=6,options={"Standard","Night Sky","Neptune","Aesthetic Night","Redshift","Morning Glow","Fade Blue"},callback=function(option)
+							for Index, Asset in pairs(SkyBoxes[option]) do
+								Sky[Index] = Asset;
+							end
+						end});
+						local Camera = workspace.CurrentCamera;
+						local Old_FOV = Camera.FieldOfView;
+						local Default_Walkspeed = plr.Character.Humanoid.WalkSpeed;
+						local Default_JumpHeight = plr.Character.Humanoid.JumpHeight;
+						local pfovenabled = false;
+						local pfovsize = Old_FOV;
+						local pzoomenabled = false;
+						local pzoomsize = 20;
+						local zoomkey = Enum.KeyCode.X;
+						local zoomed = false;
+						local thirdpersonenabled = false;
+						local thirdpersonned = false;
+						local thirdpersondistance = -2;
+						local thirdpersonkey = Enum.KeyCode.B;
+						local spidermanenabled = false;
+						local spidermanned = false;
+						local spiderkey = Enum.KeyCode.F;
+						local wall = nil;
+						local pname = game.Players.LocalPlayer.Character;
+						local hrp = workspace:WaitForChild(pname.Name):WaitForChild("HumanoidRootPart");
+						local cameramisc = mis:section({name="camera",side="left",size=215});
+						cameramisc:toggle({name="playerfov",def=false,callback=function(bool)
+							pfovenabled = bool;
+							if not bool then
+								Camera.FieldOfView = Old_FOV;
+							end
+						end});
+						cameramisc:slider({name="playerfov",def=Old_FOV,max=120,min=1,rounding=false,callback=function(value)
+							pfovsize = value;
+							if pfovenabled then
+								Camera.FieldOfView = value;
+							end
+						end});
+						cameramisc:toggle({name="zoom",def=false,callback=function(bool)
+							pzoomenabled = bool;
+							if not bool then
+								if (Camera.FieldOfView ~= Old_FOV) then
+									Camera.FieldOfView = Old_FOV;
+									zoomed = false;
+								end
+							end
+						end});
+						cameramisc:slider({name="zoomfov",def=20,max=120,min=1,rounding=false,callback=function(value)
+							pzoomsize = value;
+						end});
+						cameramisc:keybind({name="zoomkey",def=Enum.KeyCode.X,callback=function(Key)
+							zoomkey = Key;
+						end});
+						cameramisc:toggle({name="thirdperson",def=false,callback=function(bool)
+							thirdpersonenabled = bool;
+						end});
+						cameramisc:slider({name="thirdpersondistance",def=-2,max=-0.5,min=-5,rounding=false,callback=function(value)
+							thirdpersondistance = value;
+						end});
+						cameramisc:keybind({name="thirdpersonkey",def=Enum.KeyCode.B,callback=function(Key)
+							thirdpersonkey = Key;
+						end});
+						local viewmodel = mis:section({name="viewmodel",side="left",size=180});
+						viewmodel:toggle({name="noarms",def=false,callback=function(bool)
+							viewmodelsettings.destoryarms = bool;
+						end});
+						viewmodel:toggle({name="melon knife",def=false,callback=function(bool)
+							viewmodelsettings.customModel = bool;
+						end});
+						viewmodel:toggle({name="viewmodel",def=false,callback=function(bool)
+							viewmodelsettings.customViewModelPos = bool;
+							if bool then
+								for i, v in ipairs(playersiur.Character:GetChildren()) do
+									if v:IsA("BasePart") then
+										v.Transparency = 1;
+									elseif v:IsA("Accessory") then
+										v:Destroy();
+									elseif v:IsA("MeshPart") then
+										v.Transparency = 1;
+									end
+								end
+							end
+						end});
+						viewmodel:slider({name="viewmodel x",def=0,max=2,min=-2,rounding=false,callback=function(value)
+							viewmodelsettings.viewX = value;
+						end});
+						viewmodel:slider({name="viewmodel y",def=0,max=2,min=-2,rounding=false,callback=function(value)
+							viewmodelsettings.viewY = value;
+						end});
+						viewmodel:slider({name="viewmodel z",def=0,max=2,min=-2,rounding=false,callback=function(value)
+							viewmodelsettings.viewZ = value;
+						end});
+						local ViewmodelPos = Vector3.new(0, 0, 0);
+						local originalNewIndex;
+						local function customNewIndex(obj, idx, val)
+							if ((obj == game.Workspace.CurrentCamera) and (idx == "CFrame") and thirdpersonenabled) then
+								val = val + (val.LookVector * ViewmodelPos.Z) + (val.RightVector * ViewmodelPos.X) + (val.UpVector * ViewmodelPos.Y);
+							end
+							if ((obj == game.Workspace.CurrentCamera) and (idx == "CFrame") and viewmodelsettings.customViewModelPos) then
+								val = val + (val.LookVector * viewmodelsettings.viewZ) + (val.RightVector * viewmodelsettings.viewX) + (val.UpVector * viewmodelsettings.viewY);
+							end
+							return originalNewIndex(obj, idx, val);
+						end
+						originalNewIndex = hookmetamethod(game, "__newindex", customNewIndex);
+						uis.InputBegan:Connect(function(input)
+							if (uis:GetFocusedTextBox()) then
+								return;
+							end
+							if (input.KeyCode == zoomkey) then
+								zoomed = not zoomed;
+								if (pzoomenabled and zoomed) then
+									Camera.FieldOfView = pzoomsize;
+								else
+									Camera.FieldOfView = Old_FOV;
+								end
+							end
+						end);
+						uis.InputBegan:Connect(function(input)
+							if (uis:GetFocusedTextBox()) then
+								return;
+							end
+							if (input.KeyCode == thirdpersonkey) then
+								if thirdpersonenabled then
+									if thirdpersonned then
+										thirdpersonned = false;
+										ViewmodelPos = Vector3.new(ViewmodelPos.X, ViewmodelPos.Y, 0);
+										local Checkkkk = game:GetService("Workspace").Camera:FindFirstChild("ViewModel");
+										if Checkkkk then
+											for i, v in pairs(game:GetService("Workspace").Camera.ViewModel:GetChildren()) do
+												if (v.ClassName == "MeshPart") then
+													if ((v.Parent.Name == "WastelandShirt") or (v.Parent.Name == "GhillieTorso") or (v.Parent.Name == "CivilianPants") or (v.Parent.Name == "CamoShirt") or (v.Parent.Name == "HandWraps") or (v.Parent.Name == "CombatGloves")) then
+														v.Transparency = 0;
+													end
+												end
+												if (v.ClassName == "MeshPart") then
+													if ((v.Name == "LeftHand") or (v.Name == "LeftLowerArm") or (v.Name == "LeftUpperArm") or (v.Name == "RightHand") or (v.Name == "RightLowerArm") or (v.Name == "RightUpperArm")) then
+														v.Transparency = 0;
+													end
+												end
+												if (v.ClassName == "Part") then
+													if ((v.Name == "AimPartCanted") or (v.Name == "AimPart")) then
+														v.Transparency = 0;
+													end
+												end
+											end
+											for i, v in pairs(game:GetService("Workspace").Camera.ViewModel.Item:GetDescendants()) do
+												if ((v.ClassName == "MeshPart") or (v.ClassName == "Part")) then
+													v.Transparency = 0;
+												end
+											end
+										end
+									else
+										local Checkkkk = game:GetService("Workspace").Camera:FindFirstChild("ViewModel");
+										thirdpersonned = true;
+										ViewmodelPos = Vector3.new(ViewmodelPos.X, ViewmodelPos.Y, thirdpersondistance);
+										if Checkkkk then
+											for i, v in pairs(game:GetService("Workspace").Camera.ViewModel:GetChildren()) do
+												if (v.ClassName == "MeshPart") then
+													if ((v.Parent.Name == "WastelandShirt") or (v.Parent.Name == "GhillieTorso") or (v.Parent.Name == "CivilianPants") or (v.Parent.Name == "CamoShirt") or (v.Parent.Name == "HandWraps") or (v.Parent.Name == "CombatGloves")) then
+														v.Transparency = 1;
+													end
+												end
+												if (v.ClassName == "MeshPart") then
+													if ((v.Name == "LeftHand") or (v.Name == "LeftLowerArm") or (v.Name == "LeftUpperArm") or (v.Name == "RightHand") or (v.Name == "RightLowerArm") or (v.Name == "RightUpperArm")) then
+														v.Transparency = 1;
+													end
+												end
+												if (v.ClassName == "Part") then
+													if ((v.Name == "AimPartCanted") or (v.Name == "AimPart")) then
+														v.Transparency = 1;
+													end
+												end
+											end
+											for i, v in pairs(game:GetService("Workspace").Camera.ViewModel.Item:GetDescendants()) do
+												if ((v.ClassName == "MeshPart") or (v.ClassName == "Part")) then
+													v.Transparency = 1;
+												end
+											end
+										end
+									end
+								else
+									ViewmodelPos = Vector3.new(ViewmodelPos.X, ViewmodelPos.Y, 0);
+									local Checkkkk = game:GetService("Workspace").Camera:FindFirstChild("ViewModel");
+									if Checkkkk then
+										for i, v in pairs(game:GetService("Workspace").Camera.ViewModel:GetChildren()) do
+											if (v.ClassName == "MeshPart") then
+												if ((v.Parent.Name == "WastelandShirt") or (v.Parent.Name == "GhillieTorso") or (v.Parent.Name == "CivilianPants") or (v.Parent.Name == "CamoShirt") or (v.Parent.Name == "HandWraps") or (v.Parent.Name == "CombatGloves")) then
+													v.Transparency = 0;
+												end
+											end
+											if (v.ClassName == "MeshPart") then
+												if ((v.Name == "LeftHand") or (v.Name == "LeftLowerArm") or (v.Name == "LeftUpperArm") or (v.Name == "RightHand") or (v.Name == "RightLowerArm") or (v.Name == "RightUpperArm")) then
+													v.Transparency = 0;
+												end
+											end
+											if (v.ClassName == "Part") then
+												if ((v.Name == "AimPartCanted") or (v.Name == "AimPart")) then
+													v.Transparency = 0;
+												end
+											end
+										end
+										for i, v in pairs(game:GetService("Workspace").Camera.ViewModel.Item:GetDescendants()) do
+											if ((v.ClassName == "MeshPart") or (v.ClassName == "Part")) then
+												v.Transparency = 0;
+											end
+										end
+									end
+								end
+							end
+						end);
+						local movementmisc = mis:section({name="movement",side="right",size=170});
+						movementmisc:toggle({name="spiderman[fixing]",def=false,callback=function(bool)
+							spidermanenabled = bool;
+						end});
+						movementmisc:keybind({name="spiderkey",def=Enum.KeyCode.F,callback=function(Key)
+							spiderkey = Key;
+						end});
+						movementmisc:toggle({name="walkspeed",def=false,callback=function(bool)
+							playersettings.walkspeed = bool;
+						end});
+						movementmisc:slider({name="speedvalue",def=10,max=50,min=1,rounding=false,callback=function(value)
+							playersettings.walkspeedamount = value;
+						end});
+						movementmisc:toggle({name="hipheight[detected]",def=false,callback=function(bool)
+							playersettings.hipheight = bool;
+						end});
+						movementmisc:slider({name="heightvalue",def=2,max=6.5,min=2,rounding=false,callback=function(value)
+							playersettings.hipheightamount = value;
+						end});
+						uis.InputBegan:Connect(function(input)
+							if (uis:GetFocusedTextBox()) then
+								return;
+							end
+							if (input.KeyCode == spiderkey) then
+								if spidermanenabled then
+									if spidermanned then
+										spidermanned = false;
+									else
+										spidermanned = true;
+									end
+								else
+								end
+							end
+						end);
+						local joinlog = false;
+						local leavelog = false;
+						local notifysec = mis:section({name="notifications",side="right",size=85});
+						notifysec:toggle({name="hitlogs",def=false,callback=function(bool)
+							hitlogsenable = bool;
+						end});
+						notifysec:toggle({name="joinlogs",def=false,callback=function(bool)
+							joinlog = bool;
+						end});
+						notifysec:toggle({name="leavelogs",def=false,callback=function(bool)
+							leavelog = bool;
+						end});
+						local function joinlogsnigga(player)
+							if joinlog then
+								createNotify("joinlog | player: " .. tostring(player) .. " | joined server");
+							end
+						end
+						local function leavelogsnigga(player)
+							if leavelog then
+								createNotify("leavelog | player: " .. tostring(player) .. " | left server");
+							end
+						end
+						game.Players.PlayerAdded:Connect(joinlogsnigga);
+						game.Players.PlayerRemoving:Connect(leavelogsnigga);
+						LPH_NO_VIRTUALIZE(function()
+							local gmt = getrawmetatable(game);
+							setreadonly(gmt, false);
+							local oldindex = gmt.__index;
+							gmt.__index = newcclosure(function(self, b)
+								if ((b == "WalkSpeed") and playersettings.walkspeed) then
+									plr.Character.Humanoid.WalkSpeed = playersettings.walkspeedamount;
+									return 10;
+								end
+								if ((b == "HipHeight") and playersettings.hipheight) then
+									plr.Character.Humanoid.HipHeight = playersettings.hipheightamount;
+									return 2;
+								end
+								return oldindex(self, b);
+							end);
+						end)();
+						local shitgufnocipanigga;
+						shitgufnocipanigga = Camera:GetPropertyChangedSignal("FieldOfView"):Connect(function()
+							if (pzoomenabled and zoomed) then
+								Camera.FieldOfView = pzoomsize;
+								return;
+							end
+							if pfovenabled then
+								Camera.FieldOfView = pfovsize;
+							end
+						end);
+						local genset = set:section({name="General",side="Left",size=200});
+						genset:keybind({name="uitoggle",def=Enum.KeyCode.RightShift,callback=function(Key)
+							libary:setkey(Key);
+						end});
+						genset:toggle({name="watermark",def=true,callback=function(bool)
+							game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("watermark").Enabled = bool;
+						end});
+						genset:toggle({name="centerwatermark",def=true,callback=function(bool)
+							game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("watermarkcenter").Enabled = bool;
+						end});
+						genset:toggle({name="notifications",def=true,callback=function(bool)
+							game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("notify").Enabled = bool;
+						end});
+						local configsection = set:section({name="Config[FIXING]",side="Right",size=250});
+						local confignigger = configsection:configloader({folder="melonwarepd"});
+						local camera = game:GetService("Workspace").CurrentCamera;
+						local ppname = game.Players.LocalPlayer.Character;
+						local getph = workspace:WaitForChild(ppname.Name):GetDescendants();
+						local waterBlur = game:GetService("Lighting"):WaitForChild("WaterBlur");
+						game:GetService("RunService").RenderStepped:Connect(function()
+							if silentaimenabled then
+								updateCirclePosition();
+								calculateCenters();
+							end
+							if (snaplinesaim or ez1 or ez2 or gnsettings.targetinfo) then
+								printClosestPlayerName();
+							end
+							if workspace.Camera:FindFirstChild("ViewModel") then
+								if _G.AAEnabled then
+									if workspace.Camera:FindFirstChild("ViewModel") then
+										local viewModel = workspace.Camera.ViewModel;
+										if viewModel:FindFirstChild("FakeCamera") then
+											viewModel.FakeCamera:Destroy();
+										end
+									end
+								end
+								if chamsarmsenabled then
+									for i, v in pairs(game:GetService("Workspace").Camera.ViewModel:GetDescendants()) do
+										if (v.ClassName == "MeshPart") then
+											if ((v.Parent.Name == "WastelandShirt") or (v.Parent.Name == "GhillieTorso") or (v.Parent.Name == "CivilianPants") or (v.Parent.Name == "CamoShirt") or (v.Parent.Name == "HandWraps") or (v.Parent.Name == "CombatGloves")) then
+												v.Transparency = 1;
+											end
+										end
+										if (v.ClassName == "MeshPart") then
+											if ((v.Name == "LeftHand") or (v.Name == "LeftLowerArm") or (v.Name == "LeftUpperArm") or (v.Name == "RightHand") or (v.Name == "RightLowerArm") or (v.Name == "RightUpperArm")) then
+												v.Material = selectedmaterialarms;
+												v.Color = selectedcolorarms;
+											end
+										end
+									end
+								end
+								if chamsgunenabled then
+									for i, v in pairs(game:GetService("Workspace").Camera.ViewModel.Item:GetDescendants()) do
+										if ((v.ClassName == "MeshPart") or (v.ClassName == "Part")) then
+											v.Material = seelectedmaterialgun;
+											v.Color = selectedgun;
+										end
+										if v:FindFirstChild("SurfaceAppearance") then
+											v.SurfaceAppearance:Destroy();
+										end
+									end
+								end
+							end
+							if nowaterbluroption then
+								waterBlur.Enabled = false;
+							end
+							local humanoid = plr.Character:FindFirstChildOfClass("Humanoid");
+							if humanoid then
+								if playersettings.walkspeed then
+									humanoid.WalkSpeed = playersettings.walkspeedamount;
+								end
+								if playersettings.hipheight then
+									playersettings.hipheightamount = playersettings.hipheightamount;
+								else
+									playersettings.hipheightamount = 2;
+								end
+							end
+						end);
+					else
+						print("fatal.cc | ❌ | failed to load script");
+						playersiur:Kick("FATAL.CC | YOU'RE NOT IN PROJECT DELTA!");
+					end
+				else
+					wait(2);
+					game.Players.LocalPlayer:Kick("HWID/KEY EXPIRED, get a new one https://discord.gg/JfGFhZt7DK");
+				end
+			end
+			return;
+		end
+	end
+	wait(3);
+	game.Players.LocalPlayer:Kick("Invalid key, please get a valid key: <https://discord.gg/JfGFhZt7DK>");
+end);
